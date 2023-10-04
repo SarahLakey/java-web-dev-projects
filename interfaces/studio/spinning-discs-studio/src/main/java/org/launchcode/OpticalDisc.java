@@ -1,13 +1,26 @@
 package org.launchcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public interface OpticalDisc {
 
+    Map<String, Integer> CAPACITIES = new HashMap<>() {{
+        put("CD", 700);
+        put("DVD", 17000);
+    }};
 
-    void spin();
-    boolean store(); //boolean returns true if successful
-    double write(); //amount of data
-    boolean read(); //boolean returns true if readable
+    Map<String, Integer> SPEEDS = new HashMap<>() {{
+        put("CD", 400);
+        put("DVD", 1200);
+    }};
 
+    void spinDisc();
 
+    void readData();
+
+    void runFile(File file);
+
+    void writeData(File file);
 
 }
